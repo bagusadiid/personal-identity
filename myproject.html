@@ -43,64 +43,68 @@
     <div class="container py-5">
       <h2 class="text-center mb-4 fw-bold">ADD MY PROJECT</h2>
 
-      <form class="bg-white p-4 rounded shadow">
+      <form id="project-form" class="bg-white p-4 rounded shadow">
         <div class="mb-3">
           <label class="form-label">Project Name</label>
-          <input type="text" class="form-control" />
+          <input type="text" id="project-name" class="form-control" required />
         </div>
 
         <div class="row">
           <div class="col-md-6 mb-3">
             <label class="form-label">Start Date</label>
-            <input type="date" class="form-control" />
+            <input type="date" id="start-date" class="form-control" required />
           </div>
           <div class="col-md-6 mb-3">
             <label class="form-label">End Date</label>
-            <input type="date" class="form-control" />
+            <input type="date" id="end-date" class="form-control" required />
           </div>
         </div>
 
         <div class="mb-3">
           <label class="form-label">Description</label>
-          <textarea class="form-control" rows="4"></textarea>
+          <textarea id="project-desc" class="form-control" rows="4" required></textarea>
         </div>
 
         <div class="mb-3">
           <label class="form-label">Technologies</label><br />
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" />
+            <input class="form-check-input tech" type="checkbox" value="Node JS" />
             <label class="form-check-label">Node JS</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" />
+            <input class="form-check-input tech" type="checkbox" value="React JS" />
             <label class="form-check-label">React JS</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" />
+            <input class="form-check-input tech" type="checkbox" value="Next JS" />
             <label class="form-check-label">Next JS</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" />
+            <input class="form-check-input tech" type="checkbox" value="TypeScript" />
             <label class="form-check-label">TypeScript</label>
           </div>
         </div>
 
         <div class="mb-3">
           <label class="form-label">Upload Image</label>
-          <input type="file" class="form-control" />
+          <input type="file" id="project-image" class="form-control" accept="image/*" />
         </div>
 
-        <button type="button" class="btn btn-dark w-100">Submit</button>
+        <button type="submit" class="btn btn-dark w-100">Submit</button>
       </form>
     </div>
 
-    <!-- Project List Section -->
+    <!-- Filter & Project List Section -->
     <div class="container pb-5">
       <h2 class="text-center mb-4 fw-bold">MY PROJECT</h2>
+
+      <div class="mb-4">
+        <input type="text" id="search-input" class="form-control" placeholder="Cari project..." onkeyup="filterProjects(this.value)" />
+      </div>
 
       <div class="row" id="project-list"></div>
     </div>
 
-    <script src="script/add-myproject.js"></script>
+    <script src="script/script.js"></script>
   </body>
 </html>
